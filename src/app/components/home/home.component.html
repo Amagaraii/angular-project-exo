@@ -1,0 +1,26 @@
+<div class="min-h-screen bg-gray-100">
+  <!-- Navbar -->
+  <nav class="bg-blue-600 p-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <a href="/" class="text-white font-bold text-xl">MonSite</a>
+
+      <!-- Boutons selon l'état de l'utilisateur -->
+      <div *ngIf="!isLoggedIn; else loggedInMenu">
+        <button class="text-white bg-blue-500 px-4 py-2 rounded-md hover:bg-blue-400" (click)="login()">Connexion</button>
+        <button class="text-white bg-green-500 px-4 py-2 rounded-md hover:bg-green-400" (click)="register()">Enregistrez-vous</button>
+      </div>
+
+      <ng-template #loggedInMenu>
+        <button class="text-white bg-red-500 px-4 py-2 rounded-md hover:bg-red-400" (click)="logout()">Déconnexion</button>
+        <a href="/candidate-space" class="text-white font-medium">Mon Profil</a>
+      </ng-template>
+    </div>
+  </nav>
+
+  <!-- Message de bienvenue -->
+  <div class="text-center p-10">
+    <h1 class="text-4xl font-bold">Bienvenue sur notre site</h1>
+    <p class="mt-4 text-lg">Nous sommes ravis de vous voir ici!</p>
+  </div>
+</div>

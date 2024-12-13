@@ -7,9 +7,33 @@
       "password": "azerty"
     },
     {
-      "id": "fdee",
+      "name": "ytraezrz",
+      "email": "qwerty@azerty.azerty",
+      "password": "Test32!!",
+      "id": "fdee"
+    },
+    {
+      "id": "9600",
+      "name": "zaerty",
+      "email": "azerty@azerty.fr",
+      "password": "Test31!!"
+    },
+    {
+      "id": "363c",
+      "name": "zaerty",
+      "email": "azerty@azerty.fr",
+      "password": "Test31!!"
+    },
+    {
+      "id": "488b",
+      "name": "godrick",
+      "email": "godrick@gmail.com",
+      "password": "Test31!!"
+    },
+    {
+      "id": "db48",
       "name": "azerty",
-      "email": "azerty@azerty.azerty",
+      "email": "azerty@azerty.fr",
       "password": "Test31!!"
     }
   ]

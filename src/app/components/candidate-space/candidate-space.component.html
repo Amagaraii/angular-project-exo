@@ -1,4 +1,43 @@
-<div class="h-screen flex flex-col items-center justify-center bg-gray-100">
-  <h1 class="text-3xl font-bold">Bienvenue dans l'espace candidat</h1>
-  <button class="mt-4 bg-red-500 text-white py-2 px-4 rounded">Déconnexion</button>
+<div class="flex flex-col items-center justify-center h-screen bg-gray-100">
+  <form [formGroup]="candidateForm" (ngSubmit)="updateCandidate()" class="bg-white p-6 rounded shadow-md w-80">
+    <h2 class="text-2xl font-bold mb-4">Modifier vos informations</h2>
+
+    <div class="mb-4">
+      <label class="block mb-2 text-sm">Nom</label>
+      <input formControlName="name" type="text" class="w-full p-2 border rounded" />
+      <div *ngIf="candidateForm.get('name')?.touched && candidateForm.get('name')?.invalid" class="text-red-500 text-sm">
+        <div *ngIf="candidateForm.get('name')?.errors?.['required']">Le nom est requis.</div>
+        <div *ngIf="candidateForm.get('name')?.errors?.['pattern']">Le nom doit contenir uniquement des lettres et des
+          espaces.</div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="block mb-2 text-sm">Email</label>
+      <input formControlName="email" type="email" class="w-full p-2 border rounded" />
+      <div *ngIf="candidateForm.get('email')?.touched && candidateForm.get('email')?.invalid" class="text-red-500 text-sm">
+        <div *ngIf="candidateForm.get('email')?.errors?.['required']">L'email est requis.</div>
+        <div *ngIf="candidateForm.get('email')?.errors?.['email']">Veuillez entrer un email valide.</div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="block mb-2 text-sm">Mot de passe</label>
+      <input formControlName="password" type="password" class="w-full p-2 border rounded"
+        placeholder="Laissez vide si non modifié" />
+      <div *ngIf="candidateForm.get('password')?.touched && candidateForm.get('password')?.invalid" class="text-red-500 text-sm">
+        <div *ngIf="candidateForm.get('password')?.errors?.['minlength']">Le mot de passe doit contenir au moins 8
+          caractères.</div>
+        <div *ngIf="candidateForm.get('password')?.errors?.['pattern']">Le mot de passe doit contenir une majuscule et un
+          chiffre.</div>
+      </div>
+    </div>
+
+    <button type="submit" class="w-full bg-green-500 text-white py-2 rounded" [disabled]="candidateForm.invalid">
+      Enregistrer les modifications
+    </button>
+    <button (click)="goToHome()" class="w-full bg-green-500 text-white py-2 rounded mt-2">
+      Retour à l'Accueil
+    </button>
+  </form>
 </div>
