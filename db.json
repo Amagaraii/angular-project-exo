@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": "41ec",
+      "name": "Angel",
+      "email": "azerty@azerty.fr",
+      "password": "azerty"
+    },
+    {
+      "id": "fdee",
+      "name": "azerty",
+      "email": "azerty@azerty.azerty",
+      "password": "Test31!!"
+    }
+  ]
+}
